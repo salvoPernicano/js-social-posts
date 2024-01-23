@@ -78,3 +78,7 @@ h1{
     height: 50px;
     width: 50px;
 }
+
+.postFooter a.liked{
+    color: green;
+}

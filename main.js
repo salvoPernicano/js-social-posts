@@ -56,6 +56,7 @@ const posts = [
     }
 ];
 
+
 const containerHtml = document.getElementById("container");
 const profilePicHtml = document.getElementById("profilePic");
 const authorHtml = document.getElementById("author");
@@ -85,4 +86,26 @@ for (let i=0; i < posts.length; i++){
     </div>
 </div>
     `
+}
+
+const likesCounterHtml = document.getElementById("likesCounter");
+
+likesNumber = 0;
+
+const likeButton = document.querySelectorAll("a");
+likeButton.forEach((element) =>{
+    element.addEventListener("click", function(){
+        likePost(element);
+    })
+})
+
+function likePost(elemento){
+  if (elemento.classList.toggle("liked")){
+    likesNumber++
+    console.log(likesNumber);
+  } else {
+    likesNumber--
+    console.log(likesNumber)
+  }
+  
 }
