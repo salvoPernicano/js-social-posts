@@ -61,7 +61,10 @@ const containerHtml = document.getElementById("container");
 const profilePicHtml = document.getElementById("profilePic");
 const authorHtml = document.getElementById("author");
 
+
+
 for (let i=0; i < posts.length; i++){
+
     containerHtml.innerHTML += `
     <div class="post">
     <div class="postHeader">
@@ -82,30 +85,35 @@ for (let i=0; i < posts.length; i++){
     </div>
     <div class="postFooter">
         <a href="#"><i class="fa-solid fa-thumbs-up"></i>Mi piace</a>
-        <span id="likesCounter">Piace a ${posts[i].likes} persone</span>
+        <span class="contatore" id="likesCounter">Piace a ${posts[i].likes} persone</span>
     </div>
 </div>
     `
 }
 
-const likesCounterHtml = document.getElementById("likesCounter");
 
-likesNumber = 0;
+
+
 
 const likeButton = document.querySelectorAll("a");
-likeButton.forEach((element) =>{
+likeButton.forEach((element, index) =>{
     element.addEventListener("click", function(){
-        likePost(element);
+        likePost(element, index);
+
+       
     })
 })
 
-function likePost(elemento){
+const likesCounterHtml = document.querySelectorAll(".contatore");
+function likePost(elemento, index){
+    let likes = posts[index].likes;
+   
   if (elemento.classList.toggle("liked")){
-    likesNumber++
-    console.log(likesNumber);
+    console.log(elemento, index);
+    console.log(likes + 1);
+    likesCounterHtml[index].innerHTML = likes + 1
   } else {
-    likesNumber--
-    console.log(likesNumber)
+    likesCounterHtml[index].innerHTML = likes
   }
   
 }
