@@ -56,6 +56,13 @@ const posts = [
     }
 ];
 
+const cambioDate = posts.map(post => {
+    const sezioniDate = post.created.split("-");
+    const nuoveDate = `${sezioniDate[2]}-${sezioniDate[1]}-${sezioniDate[0]}`;
+    return nuoveDate;
+});
+
+
 
 const containerHtml = document.getElementById("container");
 const profilePicHtml = document.getElementById("profilePic");
@@ -73,7 +80,7 @@ for (let i=0; i < posts.length; i++){
         </figure>
         <div class="postData">
             <h3 id="author">${posts[i].author.name}</h3>
-            <span id="date">${posts[i].created}</span>
+            <span id="date">${cambioDate[i]}</span>
 
         </div>
     </div>
