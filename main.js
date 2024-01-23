@@ -55,3 +55,34 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+const containerHtml = document.getElementById("container");
+const profilePicHtml = document.getElementById("profilePic");
+const authorHtml = document.getElementById("author");
+
+for (let i=0; i < posts.length; i++){
+    containerHtml.innerHTML += `
+    <div class="post">
+    <div class="postHeader">
+        <figure>
+            <img src="${posts[i].author.image}" alt="" id="profilePic">
+        </figure>
+        <div class="postData">
+            <h3 id="author">${posts[i].author.name}</h3>
+            <span id="date">${posts[i].created}</span>
+
+        </div>
+    </div>
+    <div class="postBody">
+        <p id="postMex">${posts[i].content}</p>
+        <figure>
+            <img src="${posts[i].media}" alt="" id="postImg">
+        </figure>
+    </div>
+    <div class="postFooter">
+        <a href="#"><i class="fa-solid fa-thumbs-up"></i>Mi piace</a>
+        <span id="likesCounter">Piace a ${posts[i].likes} persone</span>
+    </div>
+</div>
+    `
+}

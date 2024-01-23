@@ -73,3 +73,8 @@ h1{
 .fa-solid{
     margin-right: 5px;
 }
+
+#profilePic{
+    height: 50px;
+    width: 50px;
+}
