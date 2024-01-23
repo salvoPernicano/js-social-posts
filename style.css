@@ -3,3 +3,73 @@
     padding:0;
     box-sizing:border-box;
 }
+
+body{
+    background-color: #023047;
+    color: #050505;
+    padding: 2em;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1{
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1em;
+}
+
+.post{
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1em;
+    font-weight: bold;
+    color: #404040;
+    margin-block: 2em;
+}
+
+.postHeader {
+    display: flex;
+    align-items: center;
+}
+.postHeader img{
+    border-radius: 50%;
+}
+
+.postData{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.postData h3{
+    color: black;
+    font-weight: bold;
+}
+
+.postBody{
+    text-align: left;
+}
+
+.postBody p{
+    margin-block: 1em;
+}
+.postBody img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.postFooter{
+    display: flex;
+    justify-content: space-around;
+    margin-block: 1em;
+}
+
+.postFooter a {
+    text-decoration: none;
+    color:  #404040;
+}
+
+.fa-solid{
+    margin-right: 5px;
+}
