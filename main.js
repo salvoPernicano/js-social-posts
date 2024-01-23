@@ -93,11 +93,12 @@ for (let i=0; i < posts.length; i++){
 
 
 
-
+const likedPost = [];
 
 const likeButton = document.querySelectorAll("a");
 likeButton.forEach((element, index) =>{
     element.addEventListener("click", function(){
+        event.preventDefault()
         likePost(element, index);
 
        
@@ -111,9 +112,12 @@ function likePost(elemento, index){
   if (elemento.classList.toggle("liked")){
     console.log(elemento, index);
     console.log(likes + 1);
-    likesCounterHtml[index].innerHTML = likes + 1
+    likesCounterHtml[index].innerHTML = `Piace a ${likes + 1} persone`;
+    likedPost.push(posts[index].id)
+    console.log(likedPost)
   } else {
-    likesCounterHtml[index].innerHTML = likes
+    likesCounterHtml[index].innerHTML = `Piace a ${likes} persone`;;
   }
   
 }
+
